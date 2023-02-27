@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-503867697723511172
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 4
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,19 +7,22 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TentWalls
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Name: CrystalBall
+  m_Shader: {fileID: -6465566751694194690, guid: 228b4e0f83ac55a49879187af1417ddb, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_be2ab895f7ac45fbad5e6b073a4682e3:
+        m_Texture: {fileID: 2800000, guid: 7cabfb90a6005564cb5ccd78bc63f3c9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -90,6 +80,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_434b9f01c23d477cb6baf5327ae6dff3: 0.876
+    - Vector1_6052bb7835404436a4dbed2421258747: 5
+    - Vector1_721eb28a24e1494890e54a3132f55f7e: 0.1
+    - Vector1_7ac4b07180874fa78a1d903e89b703d6: 20
+    - Vector1_b355ee8cef9c44378a2bab5783e7b71d: 0.59
+    - Vector1_c77fba2e6d654e72a15ffcc4a3e4112e: 0.24
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -119,8 +115,23 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.4528302, g: 0.027767902, b: 0.078505754, a: 1}
-    - _Color: {r: 0.4528302, g: 0.027767902, b: 0.078505754, a: 1}
+    - Color_4ccf6adcc9ed449bb60fee7542496bb5: {r: 1.8660659, g: 1.8660659, b: 1.8660659, a: 1}
+    - Color_be6c711484d74f3a9f3c92f24e51141d: {r: 0.8254717, g: 1, b: 0.95578617, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &5413488095846975051
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 4
