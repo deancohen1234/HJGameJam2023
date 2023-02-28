@@ -9,6 +9,6 @@ public enum OmenType
     Prosperity = 2,
     Friendship = 3,
     Famine = 4,
-    Wealth = 5,
+    War = 5,
     Poverty = 6,
 }

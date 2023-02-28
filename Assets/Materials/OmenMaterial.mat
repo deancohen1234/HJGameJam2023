@@ -84,6 +84,7 @@ Material:
     - Vector1_45511165748143c7a5eea96a5711719c: 0.5
     - Vector1_4660c85f2f28455d817c239f998a5348: 0.2
     - Vector1_82e40f157a964458a10e5e5532f887c7: 2.28
+    - _Alpha: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1

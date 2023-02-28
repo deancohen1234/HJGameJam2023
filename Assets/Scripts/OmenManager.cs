@@ -30,6 +30,10 @@ public class OmenManager : MonoBehaviour
         return currentOmen;
     }
 
+    public bool HasActiveOmen() {
+        return currentOmen != null;
+    }
+
     private string GetOmenName(GameObject omen) {
         return omen.name;
     }
