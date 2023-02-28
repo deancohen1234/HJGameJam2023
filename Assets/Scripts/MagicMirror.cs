@@ -46,6 +46,8 @@ public class MagicMirror : Location
         spawnedOmen.transform.LookAt(Camera.main.transform);
 
         omenDespawnTime = Time.time + Random.Range(minMaxHoldDuration.x, minMaxHoldDuration.y);
+
+
     }
 
     private void DespawnOmen() {
