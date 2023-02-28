@@ -20,4 +20,4 @@ MonoBehaviour:
   correctReadingResponse: Ohhhh thank you! I needed this!
   incorrectReadingResponse: WHAT?? No you are so wrong. Your readings suck!
   correctResponse: 2
-  connectedOmen: 2
+  connectedOmen: 0

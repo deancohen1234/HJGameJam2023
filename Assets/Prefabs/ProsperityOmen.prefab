@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 377722103006925560}
   - component: {fileID: 8063658851924161301}
   m_Layer: 0
-  m_Name: Omen1
+  m_Name: ProsperityOmen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

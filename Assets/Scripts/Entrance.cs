@@ -55,7 +55,7 @@ public class Entrance : Location
 
         SetSeerChallengeText();
 
-        OmenManager.instance.SelectRandomOmen();
+        OmenManager.instance.SelectOmenByType(currentChallenge.connectedOmen);
     }
 
     public void SubmitReading(int responseIndex) {

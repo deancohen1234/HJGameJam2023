@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct OmenTypePair {
+    public OmenType type;
+    public GameObject omenObject;
+}
+
 //Singleton
 public class OmenManager : MonoBehaviour
 {
@@ -9,6 +15,9 @@ public class OmenManager : MonoBehaviour
 
     [SerializeField]
     private GameObject[] allOmens;
+
+    [SerializeField, NonReorderable]
+    private OmenTypePair[] allOmenPairs;
 
     private GameObject currentOmen;
     // Start is called before the first frame update
@@ -23,6 +32,21 @@ public class OmenManager : MonoBehaviour
         currentOmen = allOmens[Random.Range(0, allOmens.Length)];
 
         return GetOmenName(currentOmen);
+    }
+
+    public void SelectOmenByType(OmenType type) {
+
+        for (int i = 0; i < allOmenPairs.Length; i++) {
+            if (allOmenPairs[i].type == type) {
+
+                currentOmen = allOmenPairs[i].omenObject;
+                break;
+            }
+        }
+
+        if (currentOmen == null) {
+            Debug.LogError("No Omen found!!!");
+        }
     }
 
     public GameObject GetCurrentOmen() {
