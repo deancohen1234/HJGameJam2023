@@ -2213,7 +2213,8 @@ MonoBehaviour:
   triggerName: Entrance
   allChallenges:
   - {fileID: 11400000, guid: 4946444beace56942b183a2ba7c15b53, type: 2}
-  uiPanel: {fileID: 977937487}
+  dialoguePanel: {fileID: 977937487}
+  dialogueTextPlayer: {fileID: 1249697192}
   optionsPanel: {fileID: 631590013}
   dialogueText: {fileID: 1249697189}
   response1Text: {fileID: 1880807790}
@@ -2554,6 +2555,7 @@ GameObject:
   - component: {fileID: 1249697190}
   - component: {fileID: 1249697189}
   - component: {fileID: 1249697191}
+  - component: {fileID: 1249697192}
   m_Layer: 5
   m_Name: DialogueText
   m_TagString: Untagged
@@ -2758,6 +2760,46 @@ MonoBehaviour:
   referenceFontSize: -1
   isResettingEffectsOnNewText: 1
   timeScale: 0
+--- !u!114 &1249697192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249697187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a6945b90dcd0c4b81619c0d8b5c283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useTypeWriter: 1
+  startTypewriterMode: -1
+  canSkipTypewriter: 0
+  hideAppearancesOnSkip: 0
+  triggerEventsOnSkip: 0
+  resetTypingSpeedAtStartup: 1
+  disappearanceOrientation: 0
+  onTextShowed:
+    m_PersistentCalls:
+      m_Calls: []
+  onTypewriterStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onTextDisappeared:
+    m_PersistentCalls:
+      m_Calls: []
+  onCharacterVisible:
+    m_PersistentCalls:
+      m_Calls: []
+  waitForNormalChars: 0.03
+  waitLong: 0.6
+  waitMiddle: 0.2
+  avoidMultiplePunctuactionWait: 0
+  waitForNewLines: 1
+  waitForLastCharacter: 1
+  useTypewriterWaitForDisappearances: 1
+  disappearanceWaitTime: 0.015
+  disappearanceSpeedMultiplier: 1
 --- !u!1 &1294408033
 GameObject:
   m_ObjectHideFlags: 0
