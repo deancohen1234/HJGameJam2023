@@ -22,7 +22,6 @@ public class CameraRaycastMover : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("NANI");
             CameraRaycast();
         }
     }
@@ -83,7 +82,6 @@ public class CameraRaycastMover : MonoBehaviour
             return;
         }
 
-        Debug.Log("Resetting");
         focusAnimator.SetTrigger(triggerName);
     }
 
