@@ -10,6 +10,7 @@ public class CameraRaycastMover : MonoBehaviour
     private LayerMask raycastMask;
 
     private Camera mainCamera;
+    private Location currentLocation;
 
     private const string RESETTAGNAME = "Reset";
 
@@ -20,19 +21,8 @@ public class CameraRaycastMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //temp
-        if (Input.GetKeyDown(KeyCode.I)) {
-            //from raycast get trigger string
-            focusAnimator.SetTrigger("MagicMirror");
-        }
-        if (Input.GetKeyDown(KeyCode.O)) {
-            focusAnimator.SetTrigger("Entrance");
-        }
-        if (Input.GetKeyDown(KeyCode.P)) {
-            focusAnimator.SetTrigger("Reset");
-        }
-
         if (Input.GetMouseButtonDown(0)) {
+            Debug.Log("NANI");
             CameraRaycast();
         }
     }
@@ -41,21 +31,60 @@ public class CameraRaycastMover : MonoBehaviour
 
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+
+        if (isOverUI) {
+            return;
+        }
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, raycastMask)) 
         {
             Transform objectHit = hit.transform;
 
-            GotoPosition(objectHit.gameObject.tag);
+            Location location = objectHit.GetComponent<Location>();
+            if (location != null) {
+                GotoLocation(location);
+            }
         }
         else 
         {
-            GotoPosition(RESETTAGNAME);
+            GotoLocation(RESETTAGNAME);
         }
     }
 
-    private void GotoPosition(string positionTag) {
-        focusAnimator.SetTrigger(positionTag);
+    private void GotoLocation(Location location) {
+
+        //enter this new location
+        location.Enter();
+
+        //if there is a current location exit it
+        if (currentLocation != null) {
+            if (currentLocation.Equals(location)) {
+                //don't accidently buffer a location if we are already here
+                return;
+            }
+
+            currentLocation.Exit();
+        }
+
+        currentLocation = location;
+
+        focusAnimator.SetTrigger(location.triggerName);
+    }
+
+    private void GotoLocation(string triggerName) {
+
+        if (currentLocation != null) {
+            currentLocation.Exit();
+            currentLocation = null;
+        }
+        else {
+            //we are current in reset, so don't call trigger
+            return;
+        }
+
+        Debug.Log("Resetting");
+        focusAnimator.SetTrigger(triggerName);
     }
 
 

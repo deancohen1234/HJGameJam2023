@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicMirror : MonoBehaviour
+public class MagicMirror : Location
 {
     public GameObject[] allOmens;
 
@@ -12,15 +12,14 @@ public class MagicMirror : MonoBehaviour
     private GameObject spawnedOmen;
     private float omenDespawnTime;
     private float omenSpawnTime;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        if (!IsActive()) {
+            return;
+        }
+
         if (spawnedOmen == null && Time.time >= omenSpawnTime) {
             SpawnOmen();
         }
@@ -30,8 +29,19 @@ public class MagicMirror : MonoBehaviour
         }
     }
 
+    public override void Enter() {
+        base.Enter();
+
+        omenSpawnTime = Time.time + Random.Range(minMaxWaitDuration.x, minMaxWaitDuration.y);
+    }
+
+    public override void Exit() {
+        base.Exit();
+    }
+
     private void SpawnOmen() {
-        spawnedOmen = Instantiate(allOmens[Random.Range(0, allOmens.Length)]);
+
+        spawnedOmen = Instantiate(OmenManager.instance.GetCurrentOmen());
         spawnedOmen.transform.position = transform.position;
         spawnedOmen.transform.LookAt(Camera.main.transform);
 
