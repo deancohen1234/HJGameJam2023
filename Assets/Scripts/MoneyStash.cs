@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class MoneyStash : MonoBehaviour
 {
+    public delegate void CoinsCountFinished();
+
     public GameObject coinPrefab;
     public Transform spawnTransform;
     public float delayBetweenCoins = 0.2f;
+
+    public CoinsCountFinished coinCountFinished;
 
     private Stack<GameObject> coinStack;
 
@@ -46,6 +50,10 @@ public class MoneyStash : MonoBehaviour
             coinStack.Push(coin);
 
             yield return new WaitForSeconds(delayBetweenCoins);
+        }
+
+        if (coinCountFinished != null) {
+            coinCountFinished();
         }
     }
 

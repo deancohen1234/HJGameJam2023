@@ -8,6 +8,7 @@ using Febucci.UI;
 public class Entrance : Location
 {
     public SeerChallenge[] allChallenges;
+    public MoneyStash moneyStash;
 
     public GameObject dialoguePanel;
     public TextAnimatorPlayer dialogueTextPlayer;
@@ -30,6 +31,16 @@ public class Entrance : Location
     void Start()
     {
         dialogueText.text = "";
+
+        if (moneyStash != null) {
+            moneyStash.coinCountFinished += CoinCountFinished;
+        }
+    }
+
+    private void OnDestroy() {
+        if (moneyStash != null) {
+            moneyStash.coinCountFinished -= CoinCountFinished;
+        }
     }
 
     public override void Enter() {
@@ -69,17 +80,21 @@ public class Entrance : Location
         string clientResponse = "";
         if (correctResponse) {
             clientResponse = currentChallenge.correctReadingResponse;
+
+            //Add money!
+            moneyStash.AddCoins(currentChallenge.reward);
         }
         else {
             clientResponse = currentChallenge.incorrectReadingResponse;
+            moneyStash.RemoveCoins(5);
         }
 
         dialogueTextPlayer.ShowText(clientResponse);
         optionsPanel.SetActive(false);
 
-        StartCoroutine(_WaitForNewClientSequence());
+        //the adding/removing of coins is now going to call CoinCountFinished 
     }
-    
+
     private void SetSeerChallengeText() {
 
         if (currentChallenge == null) {
@@ -106,6 +121,10 @@ public class Entrance : Location
         currentChallenge = allChallenges[Random.Range(0, allChallenges.Length)];
     }
 
+    private void CoinCountFinished() {
+        StartCoroutine(_WaitForNewClientSequence());
+    }
+
     private IEnumerator _WaitForNewClientSequence() {
 
         yield return new WaitForSeconds(1f);
@@ -113,7 +132,7 @@ public class Entrance : Location
         //hide UI panel since client left
         dialoguePanel.SetActive(false);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         AcceptNewClient();
     }

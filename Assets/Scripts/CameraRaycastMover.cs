@@ -12,10 +12,14 @@ public class CameraRaycastMover : MonoBehaviour
     private Camera mainCamera;
     private Location currentLocation;
 
+    private string lastFocusState;
+
     private const string RESETTAGNAME = "Reset";
 
     private void Start() {
         mainCamera = GetComponent<Camera>();
+
+        lastFocusState = RESETTAGNAME;
     }
 
     // Update is called once per frame
@@ -40,9 +44,15 @@ public class CameraRaycastMover : MonoBehaviour
         {
             Transform objectHit = hit.transform;
 
+            Debug.Log("Hit: " + objectHit.gameObject.name);
+
+
             Location location = objectHit.GetComponent<Location>();
             if (location != null) {
                 GotoLocation(location);
+            }
+            else {
+                GotoLocation(objectHit.gameObject.tag);
             }
         }
         else 
@@ -52,6 +62,11 @@ public class CameraRaycastMover : MonoBehaviour
     }
 
     private void GotoLocation(Location location) {
+
+        //don't go into a location if we are already here
+        if (location.triggerName == lastFocusState) {
+            return;
+        }
 
         //enter this new location
         location.Enter();
@@ -69,20 +84,24 @@ public class CameraRaycastMover : MonoBehaviour
         currentLocation = location;
 
         focusAnimator.SetTrigger(location.triggerName);
+
+        lastFocusState = location.triggerName;
     }
 
     private void GotoLocation(string triggerName) {
+
+        //don't go into a location if we are already here
+        if (triggerName == lastFocusState) {
+            return;
+        }
 
         if (currentLocation != null) {
             currentLocation.Exit();
             currentLocation = null;
         }
-        else {
-            //we are current in reset, so don't call trigger
-            return;
-        }
 
         focusAnimator.SetTrigger(triggerName);
+        lastFocusState = triggerName;
     }
 
 

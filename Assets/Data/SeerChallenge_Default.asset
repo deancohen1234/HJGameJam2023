@@ -21,3 +21,4 @@ MonoBehaviour:
   incorrectReadingResponse: WHAT?? No you are so wrong. Your readings suck!
   correctResponse: 2
   connectedOmen: 0
+  reward: 30
