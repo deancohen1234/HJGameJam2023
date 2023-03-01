@@ -20,7 +20,10 @@ public class MoneyStash : MonoBehaviour
 
         coinStack = new Stack<GameObject>();
 
-        StartCoroutine(_AddCoinSequence(startingCoins));
+        for (int i = 0; i < startingCoins; i++) {
+            GameObject startingCoin = CreateCoin();
+            coinStack.Push(startingCoin);
+        }
     }
 
     private void Update() {
