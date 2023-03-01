@@ -36,16 +36,18 @@ public class CameraRaycastMover : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
 
-        if (isOverUI) {
+        bool isLocationLocking = false;
+        if (currentLocation != null) {
+            isLocationLocking = currentLocation.IsLocking();
+        }
+
+        if (isOverUI || isLocationLocking) {
             return;
         }
 
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, raycastMask)) 
         {
             Transform objectHit = hit.transform;
-
-            Debug.Log("Hit: " + objectHit.gameObject.name);
-
 
             Location location = objectHit.GetComponent<Location>();
             if (location != null) {

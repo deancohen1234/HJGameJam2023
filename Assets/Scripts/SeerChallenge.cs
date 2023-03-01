@@ -26,6 +26,7 @@ public class SeerChallenge : ScriptableObject
     public OmenType connectedOmen;
 
     public int reward = 10;
+    public int loss = 6;
 
     public bool IsCorrectResponse(int responseIndex) {
         return (responseIndex == correctResponse);

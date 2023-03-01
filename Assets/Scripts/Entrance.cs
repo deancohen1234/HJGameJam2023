@@ -86,11 +86,13 @@ public class Entrance : Location
         }
         else {
             clientResponse = currentChallenge.incorrectReadingResponse;
-            moneyStash.RemoveCoins(5);
+            moneyStash.RemoveCoins(currentChallenge.loss);
         }
 
         dialogueTextPlayer.ShowText(clientResponse);
         optionsPanel.SetActive(false);
+
+        SetIsLocking(true);
 
         //the adding/removing of coins is now going to call CoinCountFinished 
     }
@@ -135,5 +137,7 @@ public class Entrance : Location
         yield return new WaitForSeconds(2f);
 
         AcceptNewClient();
+
+        SetIsLocking(false);
     }
 }

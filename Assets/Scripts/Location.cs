@@ -8,6 +8,9 @@ public abstract class Location : MonoBehaviour
 
     private bool isActive;
 
+    //cannot move from this location
+    private bool isLocking;
+
     public virtual void Enter() {
         isActive = true;
     }
@@ -17,5 +20,14 @@ public abstract class Location : MonoBehaviour
 
     public bool IsActive() {
         return isActive;
+    }
+
+    public bool IsLocking() {
+        return isLocking;
+    }
+
+    public void SetIsLocking(bool _isLocking) {
+
+        this.isLocking = _isLocking;
     }
 }

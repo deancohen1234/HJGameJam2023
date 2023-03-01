@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Entrance
   - MagicMirror
+  - Coins
   layers:
   - Default
   - TransparentFX
