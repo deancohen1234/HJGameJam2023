@@ -13,6 +13,7 @@ public class MagicMirror : Location
     public Vector2 minMaxHoldDuration = new Vector2(1.5f, 4.0f);
 
     public float omenMaxMoveSpeed = 0.5f;
+    public float omenTorqueSpeed = 5f;
     public float omenGravity = 0.1f;
 
     private GameObject spawnedOmen;
@@ -80,6 +81,7 @@ public class MagicMirror : Location
         omenMaterial.SetFloat("_Alpha", 0);
 
         omenRB.velocity = Random.insideUnitSphere * omenMaxMoveSpeed;
+        omenRB.AddTorque(Random.insideUnitSphere * omenTorqueSpeed);
         omenRB.detectCollisions = false;
     }
 
