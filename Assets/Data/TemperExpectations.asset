@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6a2b64eb90d0b46b78a1a2d0ec0847, type: 3}
+  m_Name: TemperExpectations
+  m_EditorClassIdentifier: 
+  clientName: Huntley Chalks
+  openingDialogueText: I have been seeing someone. And while we are close I'm not
+    sure if I should ask them to be somethng more? Is the time to do this?
+  response1: I see a deep passionate love between the two of you. But it may burn
+    out should you not capitalize on this now.
+  response2: You connection to this person is strong. But for now companionship is
+    the right call of acton. In time things may change and evolve.
+  response3: I see something poisonness in this person. Leave them. They aim to betray
+    you.
+  correctReadingResponse: That makes sense. We are so close I wouldn't want to jeparodize
+    that right now. But maybe eventually.
+  incorrectReadingResponse: Ohhh that just feels wrong. There's no way you can see
+    the future.
+  correctResponse: 0
+  connectedOmen: 3
+  reward: 10
+  loss: 6

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6a2b64eb90d0b46b78a1a2d0ec0847, type: 3}
+  m_Name: AreTheyIntoMe
+  m_EditorClassIdentifier: 
+  clientName: Hobart Batt
+  openingDialogueText: I need to know if the girl I'm interested in shares the same
+    feeling. I can't risk the embaressment of being rejected! Is she interested me?
+  response1: This girl is not interested in you I'm afraid. Best if you just kept
+    your distance.
+  response2: She has been harboring your feelings of love for a long time it seems.
+    I'd say now is your moment to tell her how you feel.
+  response3: She is interested... however I warn you I see strife and hardship in
+    your future. This relationship will not end well
+  correctReadingResponse: <shake>WHAT??</shake> I don't want that. There was always
+    a little nagging in the back of my mind that something was off. I will just stay
+    friends then!
+  incorrectReadingResponse: No no no that just can't be right, something just feels
+    <wave>off</wave>. Guess I wil try another seer in the next town over.
+  correctResponse: 3
+  connectedOmen: 4
+  reward: 15
+  loss: 8

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SeerGame/SeerChallenge", fileName = "SeerChallengee")]
 public class SeerChallenge : ScriptableObject
 {
+    public string clientName;
     [TextArea]
     public string openingDialogueText;
 

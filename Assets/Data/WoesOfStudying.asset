@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6a2b64eb90d0b46b78a1a2d0ec0847, type: 3}
+  m_Name: WoesOfStudying
+  m_EditorClassIdentifier: 
+  clientName: Allison Draguar
+  openingDialogueText: I'm never convinced you people can predict anything about
+    some you don't know. But... I need clarity. I am training to become the greatest
+    violinest in the world. And my audition is coming up. Tell me it's going to go
+    well?
+  response1: Love and life are in your future. This audition marks the beginning
+    of a new age of passion and success for you.
+  response2: Pain and suffering are at the end of this path you've chosen. It will
+    consume you. You must give up on this dream. There are other ways to obtain the
+    success you crave.
+  response3: This audition will fail, but it will not be the end of your career.
+    I see delayed success and achievement for you.
+  correctReadingResponse: Oh my god... you are right... I have been focusing so much
+    on my goal I never thought if I truly wanted it... I need to go and rethink my
+    career... thank you.
+  incorrectReadingResponse: Oh of course you would say that. You know nothing about
+    me and are just making all this up!
+  correctResponse: 2
+  connectedOmen: 1
+  reward: 30
+  loss: 10

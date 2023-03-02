@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6a2b64eb90d0b46b78a1a2d0ec0847, type: 3}
+  m_Name: FashionFromHell
+  m_EditorClassIdentifier: 
+  clientName: Leland Graytwig
+  openingDialogueText: I just got this new jacket. What do you think?
+  response1: This jacket holds the keys to your success. Never lose it.
+  response2: This is the jacket you will wear on your wedding day. There may be someone
+    important enter your life soon.
+  response3: This jacket has a foul energy about it. It will be the one you wear
+    as all you hold dear is stripped away from you. Be rid of it now.
+  correctReadingResponse: <shake>Dear god!!</shake> Okay I will return it now. Actually...
+    I will just burn it instead.
+  incorrectReadingResponse: Thank god! I had this weird feeling I was gonna get cursed
+    and everything I love was gonna be taken from me......... but seems like you
+    know better.
+  correctResponse: 0
+  connectedOmen: 5
+  reward: 10
+  loss: 6

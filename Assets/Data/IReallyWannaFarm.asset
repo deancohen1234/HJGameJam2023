@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6a2b64eb90d0b46b78a1a2d0ec0847, type: 3}
+  m_Name: IReallyWannaFarm
+  m_EditorClassIdentifier: 
+  clientName: Star Poults
+  openingDialogueText: This is gonna sound crazy, but I saw a plot of farmland on
+    my way to work and I just got this feeling I should drop everything to make it
+    my own. But I need to know if it's gonna work out!
+  response1: I see riches and prosperity ahead of you. I believe this farm is your
+    catalyst.
+  response2: Rags and struggle are in your future. This farm will lead you to ruin.
+  response3: You have a bright future, but not at this farm. You must wait until
+    another opportunity arises.
+  correctReadingResponse: <wiggle>YES YES YES!</wiggle> I knew it! Everyone called
+    me crazy but they just don't know my potential!
+  incorrectReadingResponse: You all just don't see my potential!! Screw you, my brother,
+    and anyone else who doubts me. I'm getting this farm and I will show all of you
+    what I can do!
+  correctResponse: 1
+  connectedOmen: 2
+  reward: 10
+  loss: 6
