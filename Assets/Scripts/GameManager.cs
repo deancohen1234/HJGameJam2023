@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float fadeDuration = 1.0f;
 
     public GameObject gameOverScreen;
+    public GameObject winGameScreen;
 
     private void Awake() {
         instance = this;
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
 
     public void EndGame() {
 
+        fader.DOFade(1.0f, fadeDuration).SetEase(Ease.Linear).OnComplete(FadeToBlackEndGameComplete);
+    }
+
+    public void WinGame() {
         fader.DOFade(1.0f, fadeDuration).SetEase(Ease.Linear).OnComplete(FadeToBlackEndGameComplete);
     }
 

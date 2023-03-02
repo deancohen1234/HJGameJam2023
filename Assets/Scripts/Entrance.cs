@@ -27,9 +27,15 @@ public class Entrance : Location
     //only display options once we enter the entrance for the second
     private SeerChallenge currentChallenge;
 
+    private List<SeerChallenge> availableChallenges;
+
+    private bool responseTextComplete = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        availableChallenges = new List<SeerChallenge>(allChallenges);
+
         dialogueText.text = "";
 
         if (moneyStash != null) {
@@ -94,6 +100,8 @@ public class Entrance : Location
 
         SetIsLocking(true);
 
+        dialogueTextPlayer.onTextShowed.AddListener(OnReponseShowed);
+
         //the adding/removing of coins is now going to call CoinCountFinished 
     }
 
@@ -115,26 +123,35 @@ public class Entrance : Location
 
     private void SelectSeerChallenge() {
 
+        //all challenges complete!
         if (allChallenges.Length == 0) {
-            Debug.LogError("Seer Challenges Empty!");
+            GameManager.instance.WinGame();
             return;
         }
         
-        currentChallenge = allChallenges[Random.Range(0, allChallenges.Length)];
+        currentChallenge = availableChallenges[Random.Range(0, allChallenges.Length)];
+        availableChallenges.Remove(currentChallenge);
     }
 
     private void CoinCountFinished() {
         StartCoroutine(_WaitForNewClientSequence());
     }
 
+    private void OnReponseShowed() {
+        responseTextComplete = true;
+    }
+
     private IEnumerator _WaitForNewClientSequence() {
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitUntil(() => responseTextComplete);
+
+        yield return new WaitForSeconds(1.5f);
 
         //hide UI panel since client left
         dialoguePanel.SetActive(false);
+        responseTextComplete = false;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
 
         AcceptNewClient();
 

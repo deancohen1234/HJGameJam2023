@@ -26,14 +26,6 @@ public class OmenManager : MonoBehaviour
         instance = this;
     }
 
-    //return name of random omen selected
-    public string SelectRandomOmen() {
-
-        currentOmen = allOmens[Random.Range(0, allOmens.Length)];
-
-        return GetOmenName(currentOmen);
-    }
-
     public void SelectOmenByType(OmenType type) {
 
         for (int i = 0; i < allOmenPairs.Length; i++) {
