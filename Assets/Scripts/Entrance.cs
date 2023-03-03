@@ -25,8 +25,13 @@ public class Entrance : Location
     public TextMeshProUGUI response2Text;
     public TextMeshProUGUI response3Text;
 
+    [Space(10)]
+    public AudioClip successSound;
+    public AudioClip failureSound;
+
     //only display options once we enter the entrance for the second
     private SeerChallenge currentChallenge;
+    private AudioSource audioSource;
 
     private List<SeerChallenge> availableChallenges;
 
@@ -42,6 +47,8 @@ public class Entrance : Location
         if (moneyStash != null) {
             moneyStash.coinCountFinished += CoinCountFinished;
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy() {
@@ -90,10 +97,18 @@ public class Entrance : Location
 
             //Add money!
             moneyStash.AddCoins(currentChallenge.reward);
+
+            //success!
+            audioSource.clip = successSound;
+            audioSource.Play();
+
         }
         else {
             clientResponse = currentChallenge.incorrectReadingResponse;
             moneyStash.RemoveCoins(currentChallenge.loss);
+
+            audioSource.clip = failureSound;
+            audioSource.Play();
         }
 
         dialogueTextPlayer.ShowText(clientResponse);
