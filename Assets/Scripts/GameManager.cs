@@ -8,16 +8,23 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public Animator focusAnimator;
+
     public CanvasGroup fader;
     public float fadeDuration = 1.0f;
 
     public GameObject gameOverScreen;
     public GameObject winGameScreen;
+    public CanvasGroup startGameScreen;
+
+    public CanvasGroup inputBlocker;
 
     private void Awake() {
         instance = this;
 
         gameOverScreen.SetActive(false);
+
+        inputBlocker.blocksRaycasts = true;
     }
 
     private void Update() {
@@ -28,6 +35,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             QuitGame();
         }
+    }
+
+    public void StartGame() {
+
+        focusAnimator.SetTrigger("Reset");
+
+        startGameScreen.DOFade(0, 0.75f);
+
+        inputBlocker.blocksRaycasts = false;
     }
 
     public void EndGame() {

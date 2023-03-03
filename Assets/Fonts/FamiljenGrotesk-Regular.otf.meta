@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: fcfbc8c276836d645b669363309c501f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Familjen Grotesk
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0b6806a5fcbcd4b4395b5ba9315d4589, type: 3}
+  - {fileID: 12800000, guid: 1932c0564ce4d194085f543cd8983a4e, type: 3}
+  - {fileID: 12800000, guid: 30ace3892b2922e4db282140a197a724, type: 3}
+  - {fileID: 12800000, guid: c1371e91044cc4248843b076834a4f0e, type: 3}
+  - {fileID: 12800000, guid: 06e185df6ddba8d48b2445c1223de60b, type: 3}
+  - {fileID: 12800000, guid: 15ee702e03c2a17418a7e4d088a85cb1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
