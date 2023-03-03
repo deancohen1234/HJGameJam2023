@@ -17,6 +17,7 @@ public class Entrance : Location
 
     public GameObject optionsPanel;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI clientNameText;
 
     [Space(10)]
 
@@ -113,6 +114,7 @@ public class Entrance : Location
 
         dialoguePanel.SetActive(true);
 
+        clientNameText.text = currentChallenge.clientName;
         dialogueTextPlayer.ShowText(currentChallenge.openingDialogueText);
         //dialogueText.text = currentChallenge.openingDialogueText;
 

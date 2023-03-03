@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6a2b64eb90d0b46b78a1a2d0ec0847, type: 3}
   m_Name: MySQUASH
   m_EditorClassIdentifier: 
-  clientName: 
+  clientName: Cedar Biscus
   openingDialogueText: I have been waiting for someone to tell my future. I have
     been growing a new squash and I <shake>REALLY</shake> don't want it to die...
     is it gonna make it?
