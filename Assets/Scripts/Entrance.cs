@@ -101,7 +101,7 @@ public class Entrance : Location
 
         SetIsLocking(true);
 
-        dialogueTextPlayer.onTextShowed.AddListener(OnReponseShowed);
+        dialogueTextPlayer.onTextShowed.AddListener(OnResponseShowed);
 
         //the adding/removing of coins is now going to call CoinCountFinished 
     }
@@ -116,6 +116,8 @@ public class Entrance : Location
 
         clientNameText.text = currentChallenge.clientName;
         dialogueTextPlayer.ShowText(currentChallenge.openingDialogueText);
+
+        dialogueTextPlayer.onTextShowed.AddListener(OnDialogueShowed);
         //dialogueText.text = currentChallenge.openingDialogueText;
 
         response1Text.text = currentChallenge.response1;
@@ -126,12 +128,12 @@ public class Entrance : Location
     private void SelectSeerChallenge() {
 
         //all challenges complete!
-        if (allChallenges.Length == 0) {
+        if (availableChallenges.Count == 0) {
             GameManager.instance.WinGame();
             return;
         }
         
-        currentChallenge = availableChallenges[Random.Range(0, allChallenges.Length)];
+        currentChallenge = availableChallenges[Random.Range(0, availableChallenges.Count)];
         availableChallenges.Remove(currentChallenge);
     }
 
@@ -139,8 +141,17 @@ public class Entrance : Location
         StartCoroutine(_WaitForNewClientSequence());
     }
 
-    private void OnReponseShowed() {
+    private void OnDialogueShowed() {
+
+        optionsPanel.SetActive(true);
+
+        dialogueTextPlayer.onTextShowed.RemoveListener(OnDialogueShowed);
+    }
+
+    private void OnResponseShowed() {
         responseTextComplete = true;
+
+        dialogueTextPlayer.onTextShowed.RemoveListener(OnResponseShowed);
     }
 
     private IEnumerator _WaitForNewClientSequence() {

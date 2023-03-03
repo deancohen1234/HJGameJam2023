@@ -16,7 +16,7 @@ MonoBehaviour:
   openingDialogueText: I just got this new jacket. What do you think?
   response1: This jacket holds the keys to your success. Never lose it.
   response2: This is the jacket you will wear on your wedding day. There may be someone
-    important enter your life soon.
+    important entering your life soon.
   response3: This jacket has a foul energy about it. It will be the one you wear
     as all you hold dear is stripped away from you. Be rid of it now.
   correctReadingResponse: <shake>Dear god!!</shake> Okay I will return it now. Actually...
@@ -24,7 +24,7 @@ MonoBehaviour:
   incorrectReadingResponse: Thank god! I had this weird feeling I was gonna get cursed
     and everything I love was gonna be taken from me......... but seems like you
     know better.
-  correctResponse: 0
+  correctResponse: 3
   connectedOmen: 5
   reward: 10
   loss: 6

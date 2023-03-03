@@ -17,15 +17,15 @@ MonoBehaviour:
     sure if I should ask them to be somethng more? Is the time to do this?
   response1: I see a deep passionate love between the two of you. But it may burn
     out should you not capitalize on this now.
-  response2: You connection to this person is strong. But for now companionship is
-    the right call of acton. In time things may change and evolve.
+  response2: Your connection to this person is strong. But for now companionship
+    is the right call of acton. In time things may change and evolve.
   response3: I see something poisonness in this person. Leave them. They aim to betray
     you.
   correctReadingResponse: That makes sense. We are so close I wouldn't want to jeparodize
-    that right now. But maybe eventually.
+    that right now.
   incorrectReadingResponse: Ohhh that just feels wrong. There's no way you can see
     the future.
-  correctResponse: 0
+  correctResponse: 2
   connectedOmen: 3
   reward: 10
   loss: 6

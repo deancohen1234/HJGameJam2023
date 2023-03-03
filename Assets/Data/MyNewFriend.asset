@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: MyNewFriend
   m_EditorClassIdentifier: 
   clientName: Thaddeus Snowbell
-  openingDialogueText: I found this rabbit in my house. It won't leave my house.
-    It's very cute but I just don't know if this is the right decision for me right
-    now.
+  openingDialogueText: I found this injured rabbit near my house. I nursed it to
+    health but now it won't leave. It's very cute but I just don't know if this is
+    the right decision for me right now.
   response1: There is a powerful bond that is between you two. It is rare and should
     be cherished and nurtured. You and this rabbit are meant to be together.
   response2: This rabbit carries a dark energy about it. It must be put as far from
     you as possible. It will only lead to ruin.
-  response3: Somone else in this world needs this creature, more than you. Search
+  response3: Someone else in this world needs this creature, more than you. Search
     them out, you will be rewarded for it.
-  correctReadingResponse: I knew this wasn't just a conincidence. Me and <rainb>Shruggles</rainb>
+  correctReadingResponse: I knew this wasn't just a coincidence. Me and <rainb>Shruggles</rainb>
     will be together forever!
-  incorrectReadingResponse: Awww I really though me and <rainb>Shruggles</rainb>
+  incorrectReadingResponse: Awww I really thought me and <rainb>Shruggles</rainb>
     had something special...
   correctResponse: 1
   connectedOmen: 0
